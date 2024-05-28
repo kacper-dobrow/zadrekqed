@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.datasets import load_iris
 
+
 def load_data():
     """
     Load the Iris dataset.
@@ -17,6 +18,7 @@ def load_data():
     df = pd.DataFrame(data.data, columns=data.feature_names)
     return df
 
+
 def split_data(data, L):
     """
     Split the data into L roughly equal parts randomly.
@@ -30,4 +32,3 @@ def split_data(data, L):
     """
     data = data.sample(frac=1).reset_index(drop=True)  # Shuffle the data
     return np.array_split(data, L)
-
