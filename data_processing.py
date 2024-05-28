@@ -4,19 +4,8 @@ from sklearn.datasets import load_iris
 
 
 def load_data():
-    """
-    Load the Iris dataset.
-
-    The Iris dataset is a classic dataset for classification tasks. It contains 150 samples
-    of iris flowers, each described by four features: sepal length, sepal width, petal length,
-    and petal width.
-
-    Returns:
-        pd.DataFrame: A DataFrame containing the Iris dataset with columns for each feature.
-    """
-    data = load_iris()
-    df = pd.DataFrame(data.data, columns=data.feature_names)
-    return df
+    # TODO: Find a good dataset
+    pass
 
 
 def split_data(data, L):
