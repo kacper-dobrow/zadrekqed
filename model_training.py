@@ -14,7 +14,7 @@ def train_model(data, L, K):
         K (int): The number of nearest neighbors to consider when calculating representativeness.
 
     Returns:
-        list of RandomForestRegressor: A list of trained models.
+        list of DecisionTreeRegressor: A list of trained models.
 
     Example:
         df = load_data()
