@@ -29,9 +29,9 @@ def train_model(data, L, K):
         model.fit(split, reps)
         # The below lines check the score of the models
         # The models are obviously overfitted to their own split and are bad for others
-        # score1 = model.score(data, all_reps)
-        # score2 = model.score(split, reps)
-        # print(f"Score on the split: {score2}\nScore on the whole dataset: {score1}")
+        score1 = model.score(data, all_reps)
+        score2 = model.score(split, reps)
+        print(f"Score on the split: {score2}\nScore on the whole dataset: {score1}")
         models.append(model)
     return models
 
@@ -51,6 +51,6 @@ def save_models(models, filename):
 if __name__ == '__main__':
     df = calculate_positions(load_data())
     L = 5  # Number of) parts to split the data into
-    K = 5  # Number of nearest neighbors to consider
+    K = 50  # Number of nearest neighbors to consider
     models = train_model(df, L, K)
     save_models(models, 'models.pkl')
