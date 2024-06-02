@@ -15,10 +15,6 @@ def train_model(data, L, K):
 
     Returns:
         list of DecisionTreeRegressor: A list of trained models.
-
-    Example:
-        df = load_data()
-        models = train_model(df, L=5, K=5)
     """
     splits = split_data(data, L)
     models = []
@@ -42,9 +38,6 @@ def save_models(models, filename):
     Args:
         models (list of RandomForestRegressor): The list of trained models to save.
         filename (str): The name of the file to save the models to.
-
-    Example:
-        save_models(models, 'models.pkl')
     """
     joblib.dump(models, filename)
 
