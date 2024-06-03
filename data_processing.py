@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 
 
 def load_data():
-    # loaded data is the orbital parameters of Jupiter's Trojans obtained from https://ssd.jpl.nasa.gov/tools/sbdb_query.html
+    # loaded data is the orbital parameters of Jupiter's Trojans
+    # obtained from https://ssd.jpl.nasa.gov/tools/sbdb_query.html
     data = pd.read_csv("orbital_parameters.csv")
     return data
 
@@ -26,8 +27,10 @@ def calculate_positions(df):
     df['r'] = df['a']
 
     # Calculation of the cartesian coordinates
-    df['x'] = df['r'] * (np.cos(df['om_rad']) * np.cos(df['w_rad'] + df['ma_rad']) - np.sin(df['om_rad']) * np.sin(df['w_rad'] + df['ma_rad']) * np.cos(df['i_rad']))
-    df['y'] = df['r'] * (np.sin(df['om_rad']) * np.cos(df['w_rad'] + df['ma_rad']) + np.cos(df['om_rad']) * np.sin(df['w_rad'] + df['ma_rad']) * np.cos(df['i_rad']))
+    df['x'] = df['r'] * (np.cos(df['om_rad']) * np.cos(df['w_rad'] + df['ma_rad']) - np.sin(df['om_rad']) * np.sin(
+        df['w_rad'] + df['ma_rad']) * np.cos(df['i_rad']))
+    df['y'] = df['r'] * (np.sin(df['om_rad']) * np.cos(df['w_rad'] + df['ma_rad']) + np.cos(df['om_rad']) * np.sin(
+        df['w_rad'] + df['ma_rad']) * np.cos(df['i_rad']))
     df['z'] = df['r'] * np.sin(df['i_rad']) * np.sin(df['w_rad'] + df['ma_rad'])
 
     return df[['x', 'y', 'z']]
@@ -48,7 +51,7 @@ def split_data(data, L):
     return np.array_split(data, L)
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     df = load_data()
     positions = calculate_positions(df)
     fig, ax = plt.subplots()
