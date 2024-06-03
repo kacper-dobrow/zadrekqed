@@ -18,6 +18,7 @@ The data used to train the ensemble was gathered at [NASA Small-Body Database Qu
 
 ## Installation
 
+Python 3.12 is recommended. However, everything should run with Python 3.8.
 Make sure you install all the required packages
 ```bash
 pip install -r requirements.txt
