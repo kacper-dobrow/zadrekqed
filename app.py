@@ -32,7 +32,7 @@ def validate_input(input_data):
 
 
 @app.route('/predict', methods=['POST'])
-def predict():
+def predict_representativeness():
     input_data = request.json
     if not validate_input(input_data):
         return jsonify({"error": "Bad Request: Input data should be a list of 3D vectors."}), 400
