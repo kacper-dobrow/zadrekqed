@@ -52,6 +52,7 @@ def split_data(data, L):
 
 
 if __name__ == "__main__":
+    # Showing the positions of the asteroids to check if it's ok
     df = load_data()
     positions = calculate_positions(df)
     fig, ax = plt.subplots()
